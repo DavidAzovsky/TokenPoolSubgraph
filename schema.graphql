@@ -1,0 +1,15 @@
+type Deposit @entity(immutable: true) {
+  id: ID!
+  from: Bytes! # address
+  amount: BigInt! # uint256
+  compound: Boolean! # bool
+  depositTime: BigInt! # uint256
+}
+
+type Withdrawal @entity(immutable: true) {
+  id: ID!
+  from: Bytes! # address
+  amount: BigInt! # uint256
+  rewardAmount: BigInt! # uint256
+  withdrawTime: BigInt! # uint256
+}

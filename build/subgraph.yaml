@@ -1,0 +1,31 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: TokenPool
+    network: mainnet
+    source:
+      address: "0x447786d977Ea11Ad0600E193b2d07A06EfB53e5F"
+      abi: TokenPool
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Deposit
+        - OwnershipTransferred
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+        - Withdrawal
+      abis:
+        - name: TokenPool
+          file: TokenPool\abis\TokenPool.json
+      eventHandlers:
+        - event: Deposit(address,uint256,bool,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,uint256,uint256,uint256)
+          handler: handleWithdrawal
+      file: TokenPool\TokenPool.wasm
