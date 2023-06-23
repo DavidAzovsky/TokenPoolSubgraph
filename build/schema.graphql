@@ -1,4 +1,4 @@
-type Deposit @entity(immutable: true) {
+type Deposit @entity {
   id: ID!
   from: Bytes! # address
   amount: BigInt! # uint256
@@ -6,7 +6,7 @@ type Deposit @entity(immutable: true) {
   depositTime: BigInt! # uint256
 }
 
-type Withdrawal @entity(immutable: true) {
+type Withdrawal @entity {
   id: ID!
   from: Bytes! # address
   amount: BigInt! # uint256
