@@ -15,10 +15,6 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - Deposit
-        - OwnershipTransferred
-        - RoleAdminChanged
-        - RoleGranted
-        - RoleRevoked
         - Withdrawal
       abis:
         - name: TokenPool

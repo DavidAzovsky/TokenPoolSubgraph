@@ -75,33 +75,3 @@ export class TokenPool extends ethereum.SmartContract {
     return new TokenPool("TokenPool", address);
   }
 }
-
-export class WithdrawCall extends ethereum.Call {
-  get inputs(): WithdrawCall__Inputs {
-    return new WithdrawCall__Inputs(this);
-  }
-
-  get outputs(): WithdrawCall__Outputs {
-    return new WithdrawCall__Outputs(this);
-  }
-}
-
-export class WithdrawCall__Inputs {
-  _call: WithdrawCall;
-
-  constructor(call: WithdrawCall) {
-    this._call = call;
-  }
-
-  get _amount(): BigInt {
-    return this._call.inputValues[0].value.toBigInt();
-  }
-}
-
-export class WithdrawCall__Outputs {
-  _call: WithdrawCall;
-
-  constructor(call: WithdrawCall) {
-    this._call = call;
-  }
-}
