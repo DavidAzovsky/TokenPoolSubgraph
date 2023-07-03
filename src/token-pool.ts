@@ -13,6 +13,7 @@ export function handleDeposit(event: DepositEvent): void {
 
   entity.save();
 }
+
 export function handleWithdrawal(event: WithdrawalEvent): void {
   let entity = new Withdrawal(event.transaction.from.toHex());
   entity.from = event.params.from;
